@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  
 }
 .container {
   width: 200px;
@@ -8,6 +9,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  
+}
+body {
+  background-color: black;
 }
 .button_wrapper {
   position: relative;
@@ -39,10 +44,10 @@ button {
   animation: distort .5s linear infinite;
 }
 .button_wrapper:hover button{
-  background: white;
+  background: black;
 }
 .button_wrapper:hover .button_label {
-  color: black;
+  color: white;
 }
 @keyframes distort {
   0% { filter: url("#shake0");}
