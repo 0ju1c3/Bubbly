@@ -121,12 +121,6 @@ class Player {
       			ctx.lineTo(mouse.x, mouse.y);
       			ctx.stroke();
     		}
-    		// ctx.fillStyle = 'red';
-    		// ctx.beginPath();
-    		// ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    		// ctx.fill();
-    		// ctx.closePath();
-    		// ctx.fillRect(this.x, this.y, this.radius, 10);
 			ctx.save();
 			ctx.translate(this.x,this.y);
 			ctx.rotate(this.angle);
@@ -187,8 +181,6 @@ function handleBubble() {
 		
 		bubblesArray[i].update();
 		bubblesArray[i].draw();
-	//}
-	//for (let i = 0; i < bubblesArray.length;i++) {
 		if (bubblesArray[i].y < 0 - bubblesArray[i].radius* 2) {
 			bubblesArray.splice(i,1);
 			i--;
@@ -226,9 +218,6 @@ function handleBubble() {
 					else {
 						bubblePop2.play();
 					}
-					// soundtrack.pause();
-					// bubblePop2.play();
-					// soundtrack.play();
 				}
 	
 				score++;
@@ -295,31 +284,7 @@ function friendlyfish() {
 	fishPosition.x--;
 
 }
-// function friendlyfish() {
-// 	ctx.drawImage(fish,fishx/10,fishy,100,75);	
-// 	fishx-=fishx/10;
-// }
-// function friendlyfish() {
-// 	ctx.drawImage(fish, fishx / 10, fishy, 100, 75);
-// 	fishx -= 1; // Decrease the x-position of the friendly fish
-// 	if (fishx < -100) { // If the friendly fish goes off the screen
-// 		fishx = canvas.width - 200; // Reset its x-position
-// 		fishy = Math.random() * (canvas.height - 150) + 150; // Generate a new random y-position
-// 	}
-// }
-// function drawBoat() {
-// 	if (Math.random() > 0.55) {
-// 	  let dx = (canvas.width - boatPosition.x) / 30;
-// 	  for (let i = boatPosition.x; i <= canvas.width; i++) {
-// 		ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas before drawing the boat at a new position
-// 		ctx.drawImage(boat, i, boatPosition.y, boatPosition.width, boatPosition.height);
-// 	  }
-// 	  boatPosition.x = canvas.width; // Update the boat's position after the loop completes
-// 	}
-// 	else {
-// 	  ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas when the boat is not moving
-// 	}
-//   }
+
 // Enemies
 
 let enemyImage = new Image();
@@ -389,30 +354,8 @@ class Enemy {
 let enemyArray = []
 enemy1 = new Enemy();
 
-// function handleEnemies() {
-// 	console.log(enemyArray.length);
-// 	enemy1.draw();
-// 	enemy1.update();
-// 	var temp = false;
-// 	if (temp == false) {
-// 		for (let i = 0; i < level; i++) {
-// 			enemyArray.push(new Enemy());	
-// 			console.log(i);
-// 		}
-// 		temp = true;
-// 	}
-	
-// 	for (let i = 0; i < enemyArray.length;i++) {
-// 		console.log(i);
-// 		enemyArray[i].draw();
-// 		enemyArray[i].update();
-// 	}
-// 	// enemy1.draw();
-// 	// enemy1.update();
-// }
-
-
 //let spawnedEnemy = false;
+
 let spawn = 1;
 function handleEnemies() {
 	enemy1.draw();
@@ -484,8 +427,7 @@ let adjustY = -3;
 ctx.fillStyle = "white";
 ctx.font = "17px Verdana";
 ctx.fillText("black", 20, 42);
-//ctx.font = '19px Verdana';
-//ctx.fillText('TEXT', 36, 49);
+
 let textCoordinates = ctx.getImageData(0, 0, 100, 100);
 
 class Particle2 {
@@ -576,16 +518,13 @@ init2();
 console.log(bubbleTextArray);
 /** bubble text end **/
 
-
-
 // animation
  
 function animate() {
 	//console.log()
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	handleBackground();
-	drawBoat();///////////////////////////////////////////////////////////////
-	//friendlyfish();
+	drawBoat();
 	friendlyfish();
 	handleBubble();
 	player.update();
